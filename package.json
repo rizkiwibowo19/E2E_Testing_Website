@@ -1,0 +1,27 @@
+{
+  "name": "e2e_testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "E2E_CYPRESS",
+    "chrome": "cypress open --browser chrome",
+    "report": "npx mochawesome-report-generator reports/mochawesome",
+    "edge": "cypress open --browser edge",
+    "report-allure": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+  },
+  "keywords": [],
+  "author": "RIZKI WIBOWO",
+  "license": "ISC",
+  "description": "E2E testing",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "@types/cypress": "^1.1.3",
+    "allure-commandline": "^2.30.0",
+    "cypress": "^13.14.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-report-generator": "^6.2.0",
+    "typescript": "^5.5.4"
+  }
+}
