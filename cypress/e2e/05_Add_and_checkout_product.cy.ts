@@ -1,4 +1,4 @@
-describe('Add and Checkout Product', () => {
+describe('Add product to cart and checkout product', () => {
   
     beforeEach(() => {
       // Visit the login page
@@ -6,17 +6,18 @@ describe('Add and Checkout Product', () => {
   
       // Perform login with the provided credentials
       cy.get('#Email')
-        .type('Ganteng@gmail.com');
+        .type('Admin1902@gmail.com');
 
       cy.get('#Password')
-        .type('ganteng123');
+        .type('admin123');
 
       cy.get('form > .buttons > .button-1')
         .click();
 
       // Verify login was successful
       cy.get('.header-links > ul > :nth-child(1) > .account')
-        .should('have.text', 'Ganteng@gmail.com');
+        .should('have.text', 'Admin1902@gmail.com')
+      
     });
 
     it('Add product to cart', () => {
@@ -50,6 +51,12 @@ describe('Add and Checkout Product', () => {
     it('Checkout product', () => {
       cy.visit('/');
 
+      cy.get('.header-links > ul > :nth-child(1) > .account')
+      .click(),
+
+      cy.get(':nth-child(2) > .inactive')
+      .click(),
+  
       cy.get('.ico-cart > .cart-label')
         .click(),
 
@@ -59,44 +66,22 @@ describe('Add and Checkout Product', () => {
       cy.get('#checkout')
         .click(),
 
-      cy.get('#BillingNewAddress_CountryId')
-        .scrollIntoView()
-        .select('Indonesia'),
-
-      cy.get('#BillingNewAddress_City')
-        .type('Yogyakarta'),
-
-      cy.get('#BillingNewAddress_Address1')
-        .type('Jl. Ganteng'),
-
-      cy.get('#BillingNewAddress_Address2')
-        .type('Jl. Ganteng banget'),
-
-      cy.get('#BillingNewAddress_ZipPostalCode')
-        .type('55283'),
-
-      cy.get('#BillingNewAddress_PhoneNumber')
-        .type('082182973055'),
-
-      cy.get('#BillingNewAddress_FaxNumber')
-        .type('12345'),
-
       cy.get('#billing-buttons-container > .button-1')
         .click(), 
 
-      cy.wait(5000),
+      cy.wait(3000),
       cy.get('#shipping-buttons-container > .button-1')
         .click(), 
 
-      cy.wait(5000),
+      cy.wait(3000),
       cy.get('#shipping-method-buttons-container > .button-1')
         .click(), 
 
-      cy.wait(5000),
+      cy.wait(3000),
       cy.get('#payment-method-buttons-container > .button-1')
         .click(), 
 
-      cy.wait(5000),
+      cy.wait(3000),
       cy.get('#payment-info-buttons-container > .button-1')
         .click(), 
 
@@ -113,16 +98,5 @@ describe('Add and Checkout Product', () => {
       cy.get('.cart-qty')
         .should('have.text', '(0)')
     });
-
-     // Logout after each test if necessary
-      // cy.wait(5000),
-      // afterEach(() => {
-      // cy.get('.ico-logout')
-      //   .click()
-
-    //   cy.get('.ico-login')
-    //     .should('have.class', 'ico-login')
-    // });
-    
   });
   

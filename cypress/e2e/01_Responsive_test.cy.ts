@@ -1,4 +1,4 @@
-describe('Responsive Testing', () => {
+describe('Responsive testing', () => {
     const viewport = [
         {width: 1024, height: 600}, //DESKTOP
         {width: 1024, height: 1366}, //IPAD

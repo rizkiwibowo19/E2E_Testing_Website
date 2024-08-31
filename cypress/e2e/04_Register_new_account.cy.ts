@@ -1,4 +1,4 @@
-describe('Login and Logout Testing', () => {
+describe('Login and logout testing', () => {
 
     it('Register', () => {
       cy.visit('/'),
@@ -15,7 +15,7 @@ describe('Login and Logout Testing', () => {
         .type('Wibowo'),
 
       cy.get('#Email')
-        .type('Ganteng@gmail.com'),
+        .type('Ganteng12@gmail.com'),
 
       cy.get('#Password')
         .type('ganteng123'),
@@ -27,7 +27,7 @@ describe('Login and Logout Testing', () => {
        .click(),
 
       cy.get('.header-links > ul > :nth-child(1) > .account')
-        .should('have.text','Ganteng@gmail.com')
+        .should('have.text','Ganteng12@gmail.com')
 
       cy.get('.page-body > .buttons > .button-1')
         .click(),
@@ -39,7 +39,7 @@ describe('Login and Logout Testing', () => {
         .click(),
 
       cy.get('#Email')
-        .type('Ganteng@gmail.com'),
+        .type('Ganteng12@gmail.com'),
 
       cy.get('#Password')
         .type('ganteng123'),
@@ -48,7 +48,7 @@ describe('Login and Logout Testing', () => {
         .click(),
 
       cy.get('.header-links > ul > :nth-child(1) > .account')
-        .should('have.text','Ganteng@gmail.com')
+        .should('have.text','Ganteng12@gmail.com')
     });
   });
   
