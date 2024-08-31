@@ -1,5 +1,4 @@
-This project is an end-to-end (E2E) testing suite for a website using Cypress. The goal of these tests is to ensure that various features on the website function correctly according to predefined user scenarios.
-
+Here is an example of an automation testing project on the website demowebshop.tricentis.com using Cypress, with reporting done using Mochawesome.
 This testing suite includes five test cases:
 
 1.  Responsive Testing,
@@ -16,3 +15,9 @@ This testing suite includes five test cases:
 
 5.  Add Product to Cart and Checkout,
     this test evaluates the functionality of adding a product to the shopping cart and testing the checkout process from the cart.
+
+Components
+- Cypress: End-to-end testing framework for web applications.
+- Node.js: JavaScript runtime used for running Cypress and other development tools.
+- Visual Studio Code: Code editor used for writing and managing code.
+- Mochawesome: Reporting tool used with Cypress for generating test reports.
